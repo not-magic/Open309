@@ -41,8 +41,8 @@ In this example image:
 
 * The green area represents when one switch is triggered for a cardinal direction.
 * The blue area represents when two switches are triggered for a diagonal.
-* The grey box is the switch deadzone, which is required for proper function of the switches. Switches may activate at 1.4mm but may not deactivate until the lever is moved back 0.3mm. The lever must sit neutrally outside of this zone or switches cannot deactivate.
-* The white area is the neutral zone, where the switches have no interaction. On a levered switch this will be slightly twisted because the switch levers pivot.
+* The grey box is the switch deadzone, which is required for proper function of the switches. Switches may activate at 1.4mm but may not deactivate until the lever is moved back 0.3mm.
+* The white area is the neutral zone, where the switches have no interaction. On a levered switch this will be slightly twisted because the switch levers pivot. The lever must sit neutrally here or the switches cannot function correctly.
 * The black circle represents a circular collar, the cap on the max rotation of the stick.
 
 The proper switch spacing is a balance:
