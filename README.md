@@ -24,22 +24,21 @@ There are two collar variations, one with ridges, to minimize support contacts t
 
 ## Tweaking the design.
 
-This was made using [OpenSCAD](https://openscad.org/), which is a free open source parametric modeller. Once you open the design you can modify variables in the customizer (Window | Customizer in the menu) or in the tool bar
+This was made using [OpenSCAD](https://openscad.org/), which is a free open source parametric modeller. Once you open the design you can modify variables in the customizer (Window | Customizer in the menu) or just modify the source directly.
 
 ![Switch Zones](./images/switch_zones.png)
 
 In this example image:
 
-* The green area represents when one switch is triggered for a cardinal direction
-* The blue area represents when the diagonals will be triggered.
-* The grey box is the switch deadzone, which is required for proper function of the switches. Switches may activate at 1.4mm but may not deactivate until the lever is moved back 1.3mm. The lever must sit neutrally outside of this zone.
-* The white area is the neutral deadzone, where the switches have no interaction. On a levered switch this will be slightly tilted because of the levers rotating.
+* The green area represents when one switch is triggered for a cardinal direction.
+* The blue area represents when two switches are triggered for a diagonal.
+* The grey box is the switch deadzone, which is required for proper function of the switches. Switches may activate at 1.4mm but may not deactivate until the lever is moved back 0.3mm. The lever must sit neutrally outside of this zone or switches cannot deactivate.
+* The white area is the neutral deadzone, where the switches have no interaction. On a levered switch this will be slightly twisted because the switch levers rotate.
 * The black circle represents a circular collar, the cap on the max rotation of the stick.
 
 The proper switch spacing is a balance to make the diagonals are just large enough to be hit reliably, and the cardinal zones are just small enough you can reliably double tap the directions for dashing.
 
 You can make double taps more reliable by increasing the grommet tension as it will return into the safe neutral zone faster.
-
 
 * _SWITCH_SPACING_AWAY_ - This is the distance of switches to the center. The larger the value, the larger the safe neutral zone becomes and the smaller the activation zones become.
 * _SWITCH_SPACING_SIDEWAYS_ - This moves the switches perpedicular to the center. A smaller value (it is negative) will increase the size of the switch deadzone, reduce the tactility of the switches, increse the resistance to tolerance errors, and reduce how much the safe neutral is twisted.
