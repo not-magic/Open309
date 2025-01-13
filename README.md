@@ -41,7 +41,7 @@ In this example image:
 * The green area represents when one switch is triggered for a cardinal direction.
 * The blue area represents when two switches are triggered for a diagonal.
 * The grey box is the switch deadzone, which is required for proper function of the switches. Switches may activate at 1.4mm but may not deactivate until the lever is moved back 0.3mm. The lever must sit neutrally outside of this zone or switches cannot deactivate.
-* The white area is the neutral deadzone, where the switches have no interaction. On a levered switch this will be slightly twisted because the switch levers rotate.
+* The white area is the neutral zone, where the switches have no interaction. On a levered switch this will be slightly twisted because the switch levers pivot.
 * The black circle represents a circular collar, the cap on the max rotation of the stick.
 
 The proper switch spacing is a balance:
@@ -49,9 +49,9 @@ The proper switch spacing is a balance:
 * Cardinal zones need to be shallow enough you can reliably double tap the directions for dashing.
 * Cardinal zones need to be wide enough to reliably find them.
 
-You can make dash actions more reliable by increasing the grommet tension as it will return into the safe neutral zone faster.
+You can make dash actions more reliable by increasing the grommet tension as it will return into the neutral zone faster.
 
-* _SWITCH_SPACING_AWAY_ - This is the distance of switches to the center. The larger the value, the larger the safe neutral zone becomes and the smaller the activation zones become.
+* _SWITCH_SPACING_AWAY_ - This is the distance of switches to the center. The larger the value, the larger the neutral zone becomes and the smaller the activation zones become.
 * _SWITCH_SPACING_SIDEWAYS_ - This moves the switches perpedicular to the center. A smaller value (it is negative) will increase the size of the switch deadzone, reduce the tactility of the switches, increase the resistance to tolerance errors, and reduce how much the safe neutral is twisted.
 * _SWITCH_ROTATION_ - This will rotate the switches towards (negative) or away from the center (positive). This may be necessary if the switches do not trigger when the lever is exactly parallel. Adjusting this will also twist all of the activation zones.
 * _STICK_THROW_DEGREES_ - This is the max rotation of the lever (e.g. max throw angle) which is used to generate the collar angles. This adjusts the size of the collar.
