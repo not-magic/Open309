@@ -1,30 +1,38 @@
 # Open309
 
-Tunable 3D Printed Crown 309 fightstick body replacement.
+An open-source 3D Printed Crown 309 fightstick body replacement.
 
-This started out as a way to create a NEW Helpme body that supported Omron D2RV-LG silent switches. But it is really a basis that allows for anybody to tweak and print their own 309 body and adjust the collar shape and switch spacing, or just print a replacement if your old body breaks.
-
-## Parts Required
-
-To assemble this you will also need 8x 16mm M2 bolts with nuts, to attach the switches to the switch plate. The height of the switch plate is designed exactly for 16mm bolts so anything else will either not reach the nuts or will intersect with the body.
+This started out as a way to create a NEW Helpme body that supported Omron D2RV-LG silent switches. But it may also be used by anybody to tweak and print their own 309 body and adjust the collar shape and switch spacing, or just print a replacement if your old body breaks.
 
 The body is in 3 parts to minimize what needs to be printed while tweaking things, as well as make it print with minimal supports:
 
-* *Collar*. The stock collar may still be used if you are happy with how it feels. You can also only print this if you are happy with the stock switch spacing.
+* *Collar*. This works as a replacement for the stock NEW Helpme collar, you can mix and match with the original collar and body.
 * *Body* the middle part (that holds the grommet).
 * *Switch Plate*. This holds the switch spacing.
 
+# Printing
+
+There are premade .STLs in the releases section.
+
+## Parts Required
+
+All parts were designed to fit the [Crown CWL-309-MJ-NEW-Helpme-KMS-ST30 Joystick](https://focusattack.com/crown-cwl-309-mj-new-helpme-kms-st30-joystick/)
+
+Other 309 variants may also work, but don't have any of them so I am not sure.
+
+To assemble this you will also need `8x 16mm M2 bolts with nuts`, to attach the switches to the switch plate. The height of the switch plate is designed for exactly 16mm bolts so anything else will either not reach the nuts or will intersect with the body.
+
 ## Print settings
 
-Tolerances were optimized for printing on my Prusa Mk3s w/ a 0.6 mm nozzle, using PLA+.
+Tolerances were optimized for printing on my Prusa Mk3s with a 0.6 mm nozzle, using Overture PLA+.
 
 If the collar is printed I would recommend using a random seam position, and lightly sanding the collar. This will prevent a noticeable bump in collar shape. I print the collar upside down with supports, which creates some pretty bad surface quality that is entirely hidden by the mounting plate.
 
-There are two collar variations, one with ridges, to minimize support contacts that may be easier to remove supports, and a flat version. The jury is out if the ridges help much, it produces fewer but harder to remove supports.
+There are two collar variations, one with ridges, to minimize supports, and a flat version. The jury is out if the ridges help much, it produces fewer but harder to remove supports.
 
-## Tweaking the design.
+# Modifying the design
 
-This was made using [OpenSCAD](https://openscad.org/), which is a free open source parametric modeller. Once you open the design you can modify variables in the customizer (Window | Customizer in the menu) or just modify the source directly.
+This was made using [OpenSCAD](https://openscad.org/), which is a free open source parametric modeller. Once you open the file you can modify variables in the customizer (Window | Customizer in the menu) or just modify the source directly.
 
 ![Switch Zones](./images/switch_zones.png)
 
