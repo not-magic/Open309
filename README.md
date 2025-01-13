@@ -14,6 +14,8 @@ The body is in 3 parts to minimize what needs to be printed while tweaking thing
 
 There are premade .STLs over in the [Releases](https://github.com/not-magic/Open309/releases)
 
+My preferred switch spacing for the D2RV-LG switches is 24.8 so it may be a place to start.
+
 ## Parts Required
 
 All parts were designed to fit the [Crown CWL-309-MJ-NEW-Helpme-KMS-ST30 Joystick](https://focusattack.com/crown-cwl-309-mj-new-helpme-kms-st30-joystick/)
