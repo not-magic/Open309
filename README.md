@@ -12,7 +12,7 @@ The body is in 3 parts to minimize what needs to be printed while tweaking thing
 
 # Printing
 
-There are premade .STLs in the releases section.
+There are premade .STLs over in the [Releases](https://github.com/not-magic/Open309/releases)
 
 ## Parts Required
 
