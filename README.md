@@ -8,7 +8,7 @@ The body is in 3 parts to minimize what needs to be printed while tweaking thing
 
 * *Collar* - This works as a replacement for the stock NEW Helpme collar, you can mix and match with the original collar and body.
 * *Body* - the middle part (that holds the grommet).
-* *Switch Plate* - This holds the switchs and controls the spacing.
+* *Switch Plate* - This holds the switches and controls the spacing.
 
 # Printing
 
