@@ -43,11 +43,13 @@ You can make double taps more reliable by increasing the grommet tension as it w
 
 * _SWITCH_SPACING_AWAY_ - This is the distance of switches to the center. The larger the value, the larger the safe neutral zone becomes and the smaller the activation zones become.
 * _SWITCH_SPACING_SIDEWAYS_ - This moves the switches perpedicular to the center. A smaller value (it is negative) will increase the size of the switch deadzone, reduce the tactility of the switches, increse the resistance to tolerance errors, and reduce how much the safe neutral is twisted.
-* _SWITCH_ROTATION_ - This will rotate the switches towards (negative) or away from the center (positive). This may be necessary if the switches do not trigger when the lever is exactly parallel. Adjusting this will twist all of the actiation zones.
+* _SWITCH_ROTATION_ - This will rotate the switches towards (negative) or away from the center (positive). This may be necessary if the switches do not trigger when the lever is exactly parallel. Adjusting this will also twist all of the activation zones.
 * _STICK_THROW_DEGREES_ - This is the max rotation of the lever (e.g. max throw angle) which is used to generate the collar angles. This adjusts the size of the collar.
 * _SWITCH_GUARD_DISTANCE_ - This will adjust the size of the gate in the switch plate. This may never be hit, but due to the way korean levers work, applying enough pressure you can force the grommet to deform and push the actuator towards the lever anyway. This is protection against damaging the switches. If you find you are hitting this with space to go, lower this distance.
 * _SHAFT_DIAMETER_ - This is the diameter of the shaft, used to generate the collar range of motion.
 * _SQUIRCLENESS_  - This affects the shape of the gate. At 0 it is a perfect circle. Higher numbers warp it into a square.
+
+Using a larger sized actuator has the same basic effect of reducing the switch away spacing, except it may also reduce the throw angle if it hits the switch guard.
 
 ### Exporting it
 
