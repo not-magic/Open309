@@ -6,9 +6,9 @@ This started out as a way to create a NEW Helpme body that supported Omron D2RV-
 
 The body is in 3 parts to minimize what needs to be printed while tweaking things, as well as make it print with minimal supports:
 
-* *Collar*. This works as a replacement for the stock NEW Helpme collar, you can mix and match with the original collar and body.
-* *Body* the middle part (that holds the grommet).
-* *Switch Plate*. This holds the switch spacing.
+* *Collar* - This works as a replacement for the stock NEW Helpme collar, you can mix and match with the original collar and body.
+* *Body* - the middle part (that holds the grommet).
+* *Switch Plate* - This holds the switchs and controls the spacing.
 
 # Printing
 
@@ -35,9 +35,7 @@ There are two collar variations, one with ridges, to minimize supports, and a fl
 # Modifying the design
 
 This was made using [OpenSCAD](https://openscad.org/), which is a free open source parametric modeller. Once you open the file you can modify variables in the customizer (Window | Customizer in the menu) or just modify the source directly.
-
 ![Switch Zones](./images/switch_zones.png)
-
 In this example image:
 
 * The green area represents when one switch is triggered for a cardinal direction.
@@ -47,6 +45,7 @@ In this example image:
 * The black circle represents a circular collar, the cap on the max rotation of the stick.
 
 The proper switch spacing is a balance:
+
 * Diagonals need to be large enough to be hit reliably.
 * Cardinal zones need to be shallow enough you can reliably double tap the directions for dashing.
 * Cardinal zones need to be wide enough to reliably find them.
@@ -54,7 +53,7 @@ The proper switch spacing is a balance:
 You can make dash actions more reliable by increasing the grommet tension as it will return into the neutral zone faster.
 
 * _SWITCH_SPACING_AWAY_ - This is the distance of switches to the center. The larger the value, the larger the neutral zone becomes and the smaller the activation zones become.
-* _SWITCH_SPACING_SIDEWAYS_ - This moves the switches perpedicular to the center. A smaller value (it is negative) will increase the size of the switch deadzone, reduce the tactility of the switches, increase the resistance to tolerance errors, and reduce how much the safe neutral is twisted.
+* _SWITCH_SPACING_SIDEWAYS_ - This moves the switches perpedicular to the center. A smaller value (it is negative) will increase the size of the switch deadzone, reduce the tactility of the switches, increase the resistance to tolerance errors, and reduce how much the neutral zone is twisted.
 * _SWITCH_ROTATION_ - This will rotate the switches towards (negative) or away from the center (positive). This may be necessary if the switches do not trigger when the lever is exactly parallel. Adjusting this will also twist all of the activation zones.
 * _STICK_THROW_DEGREES_ - This is the max rotation of the lever (e.g. max throw angle) which is used to generate the collar angles. This adjusts the size of the collar.
 * _SWITCH_GUARD_DISTANCE_ - This will adjust the size of the gate in the switch plate. This may never be hit, but due to the way korean levers work, applying enough pressure you can force the grommet to deform and push the actuator towards the lever anyway. This is protection against damaging the switches. If you find you are hitting this with space to go, lower this distance.

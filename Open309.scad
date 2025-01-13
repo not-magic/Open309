@@ -1,15 +1,14 @@
 
-SWITCH_SPACING_AWAY = 25;
-SWITCH_SPACING_SIDEWAYS = -7;
-SWITCH_ROTATION = 0;
-SWITCH_GUARD_DISTANCE = 14.5;
+SWITCH_SPACING_AWAY = 25; // .1
+SWITCH_SPACING_SIDEWAYS = -7; // .1
+SWITCH_ROTATION = -1.5; // .1
+SWITCH_GUARD_DISTANCE = 14.5; // .1
 
 PART = 0; // [0:Everything, 1:Collar, 2:Body, 3:Switch Plate]
 
-STICK_THROW_DEGREES=15;
-ACTUATOR_DIAMETER = 16;
-SHAFT_DIAMETER = 9;
-SQUIRCLENESS = 1.8;
+STICK_THROW_DEGREES=15; // .1
+SHAFT_DIAMETER = 9; // .1
+SQUIRCLENESS = 1.8; // .1
 
 // if true, the collar has ridges in it to potentially improve printablility
 COLLAR_RIDGES = true;
