@@ -24,14 +24,29 @@ There are two collar variations, one with ridges, to minimize support contacts t
 
 ## Tweaking the design.
 
-It is made using [OpenSCAD](https://openscad.org/), which is a free open source parametric modeller. Once you open the design you can modify variables in the customizer (Window | Customizer in the menu) or in the tool bar
+This was made using [OpenSCAD](https://openscad.org/), which is a free open source parametric modeller. Once you open the design you can modify variables in the customizer (Window | Customizer in the menu) or in the tool bar
 
-* _SWITCH_SPACING_AWAY_ - This adjusts the main switch spacing away from the center of the stick. This is the main thing to tweak to adjust the size of the deadzone.
-* _SWITCH_SPACING_SIDEWAYS_ - This moves the switches left and right. This should almost never need to be changed unless you want to use a non lever switch or have a custom lever postion.
-* _SWITCH_ROTATION_ - This will rotate the switches towards (negative) or away from the center (positive). This may be necessary if the switches do not trigger when the lever is exactly parallel.
-* _STICK_THROW_DEGREES_ - This is the max rotation of the lever (e.g. max throw angle) which is used to generate the collar angles.
+[Switch Zones](./images/switch_zones.png)
+
+In this example image:
+
+* The green area represents when one switch is triggered for a cardinal direction
+* The blue area represents when the diagonals will be triggered.
+* The grey box is the switch deadzone, which is required for proper function of the switches. Switches may activate at 1.4mm but may not deactivate until the lever is moved back 1.3mm. The lever must sit neutrally outside of this zone.
+* The white area is the neutral deadzone, where the switches have no interaction. On a levered switch this will be slightly tilted because of the levers rotating.
+* The black circle represents a circular collar, the max rotation of the switches.
+
+The proper switch spacing is a balance to make the diagonals are just large enough to be hit reliably, and the cardinal zones are just small enough you can reliably double tap the directions for dashing.
+
+You can make double taps more reliable by increasing the grommet tension as it will return into the safe neutral zone faster.
+
+
+* _SWITCH_SPACING_AWAY_ - This is the distance of switches to the center. The larger the value, the larger the safe neutral zone becomes and the smaller the activation zones become.
+* _SWITCH_SPACING_SIDEWAYS_ - This moves the switches perpedicular to the center. A smaller value (it is negative) will increase the size of the switch deadzone, reduce the tactility of the switches, increse the resistance to tolerance errors, and reduce how much the safe neutral is twisted.
+* _SWITCH_ROTATION_ - This will rotate the switches towards (negative) or away from the center (positive). This may be necessary if the switches do not trigger when the lever is exactly parallel. Adjusting this will twist all of the actiation zones.
+* _STICK_THROW_DEGREES_ - This is the max rotation of the lever (e.g. max throw angle) which is used to generate the collar angles. This adjusts the size of the collar.
 * _SWITCH_GUARD_DISTANCE_ - This will adjust the size of the gate in the switch plate. This may never be hit, but due to the way korean levers work, applying enough pressure you can force the grommet to deform and push the actuator towards the lever anyway. This is protection against damaging the switches. If you find you are hitting this with space to go, lower this distance.
-* _SHAFT_DIAMETER_ - This is the diameter of the shaft, used to generate the collar range of motion
+* _SHAFT_DIAMETER_ - This is the diameter of the shaft, used to generate the collar range of motion.
 * _SQUIRCLENESS_  - This affects the shape of the gate. At 0 it is a perfect circle. Higher numbers warp it into a square.
 
 ### Exporting it
@@ -39,3 +54,4 @@ It is made using [OpenSCAD](https://openscad.org/), which is a free open source 
 Using the 'PART' parameter, select each part and export it with F6, then F7
 
 Alternatively on linux you can run `make` to rebuild every part. Use `make -j 32` (or your core count number) to process them in parallel.
+
