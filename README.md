@@ -6,22 +6,21 @@ This started out as a way to create a NEW Helpme body that supported Omron D2RV-
 
 ## Parts Required
 
-To assemble this you will need:
-
-* 4x 30mm M4 bolts with nuts. The M4 nuts that a New Helpme comes with may be reused.
-* 8x 16mm M2 bolts with nuts
+To assemble this you will also need 8x 16mm M2 bolts with nuts, to attach the switches to the switch plate. The height of the switch plate is designed exactly for 16mm bolts so anything else will either not reach the nuts or will intersect with the body.
 
 The body is in 3 parts to minimize what needs to be printed while tweaking things, as well as make it print with minimal supports:
 
-* A collar. The stock collar may still be used if you are happy with how it feels. You can also only print this if you are happy with the stock switch spacing.
-* The center body part (that holds the grommet)
-* The switch plate. This may be changed on the base body at any time.
+* *Collar*. The stock collar may still be used if you are happy with how it feels. You can also only print this if you are happy with the stock switch spacing.
+* *Body* the middle part (that holds the grommet).
+* *Switch Plate*. This holds the switch spacing.
 
 ## Print settings
 
 Tolerances were optimized for printing on my Prusa Mk3s w/ a 0.6 mm nozzle, using PLA+.
 
 If the collar is printed I would recommend using a random seam position, and lightly sanding the collar. This will prevent a noticeable bump in collar shape. I print the collar upside down with supports, which creates some pretty bad surface quality that is entirely hidden by the mounting plate.
+
+There are two collar variations, one with ridges, to minimize support contacts that may be easier to print, and a flat version.
 
 ## Tweaking the design.
 
