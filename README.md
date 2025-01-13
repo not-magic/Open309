@@ -26,7 +26,7 @@ There are two collar variations, one with ridges, to minimize support contacts t
 
 This was made using [OpenSCAD](https://openscad.org/), which is a free open source parametric modeller. Once you open the design you can modify variables in the customizer (Window | Customizer in the menu) or in the tool bar
 
-[Switch Zones](./images/switch_zones.png)
+![Switch Zones](./images/switch_zones.png)
 
 In this example image:
 
