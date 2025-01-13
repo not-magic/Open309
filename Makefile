@@ -19,8 +19,6 @@ STLS = \
 	stls/309_switch_plate_24.6mm.stl\
 	stls/309_switch_plate_24.5mm.stl\
 	stls/309_switch_plate_24.5mm.stl\
-	stls/309_switch_plate_D2RV_25.1mm.stl\
-	stls/309_switch_plate_D2RV_25.0mm.stl\
 	stls/309_switch_plate_D2RV_24.9mm.stl\
 	stls/309_switch_plate_D2RV_24.8mm.stl\
 	stls/309_switch_plate_D2RV_24.7mm.stl\
@@ -86,20 +84,14 @@ stls/309_switch_plate_24.6mm.stl: Open309.scad
 stls/309_switch_plate_24.5mm.stl: Open309.scad
 	${OSC} -D PART=3 -D SWITCH_SPACING_AWAY=24.5 -o $@ Open309.scad
 
-stls/309_switch_plate_D2RV_25.1mm.stl: Open309.scad
-	${OSC} -D PART=3 -D SWITCH_SPACING_AWAY=25.1 -D SWITCH_ROTATION=-1.4 -o $@ Open309.scad
-
-stls/309_switch_plate_D2RV_25.0mm.stl: Open309.scad
-	${OSC} -D PART=3 -D SWITCH_SPACING_AWAY=25.0 -D SWITCH_ROTATION=-1.4 -o $@ Open309.scad
-
 stls/309_switch_plate_D2RV_24.9mm.stl: Open309.scad
-	${OSC} -D PART=3 -D SWITCH_SPACING_AWAY=24.9 -D SWITCH_ROTATION=-1.4 -o $@ Open309.scad
+	${OSC} -D PART=3 -D SWITCH_SPACING_AWAY=24.9 -D SWITCH_ROTATION=-1.5 -o $@ Open309.scad
 
 stls/309_switch_plate_D2RV_24.8mm.stl: Open309.scad
-	${OSC} -D PART=3 -D SWITCH_SPACING_AWAY=24.8 -D SWITCH_ROTATION=-1.4 -o $@ Open309.scad
+	${OSC} -D PART=3 -D SWITCH_SPACING_AWAY=24.8 -D SWITCH_ROTATION=-1.5 -o $@ Open309.scad
 
 stls/309_switch_plate_D2RV_24.7mm.stl: Open309.scad
-	${OSC} -D PART=3 -D SWITCH_SPACING_AWAY=24.7 -D SWITCH_ROTATION=-1.4 -o $@ Open309.scad
+	${OSC} -D PART=3 -D SWITCH_SPACING_AWAY=24.7 -D SWITCH_ROTATION=-1.5 -o $@ Open309.scad
 
 stls/Open309_STLs.zip: ${STLS}
 	zip -FS -j $@ ${STLS}
