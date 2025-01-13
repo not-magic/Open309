@@ -22,7 +22,7 @@ All parts were designed to fit the [Crown CWL-309-MJ-NEW-Helpme-KMS-ST30 Joystic
 
 Other 309 variants may also work, but don't have any of them so I am not sure. It is likely they can all work with minimal modifications.
 
-To assemble this you will also need `8x 16mm M2 bolts with nuts`, to attach the switches to the switch plate. The height of the switch plate is designed for exactly 16mm bolts so anything else will either not reach the nuts or will intersect with the body.
+To assemble this you will also need `8x 16mm M3 bolts with nuts`, to attach the switches to the switch plate. The height of the switch plate is designed for exactly 16mm bolts so anything else will either not reach the nuts or will intersect with the body.
 
 ## Print settings
 
