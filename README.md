@@ -34,7 +34,7 @@ In this example image:
 * The blue area represents when the diagonals will be triggered.
 * The grey box is the switch deadzone, which is required for proper function of the switches. Switches may activate at 1.4mm but may not deactivate until the lever is moved back 1.3mm. The lever must sit neutrally outside of this zone.
 * The white area is the neutral deadzone, where the switches have no interaction. On a levered switch this will be slightly tilted because of the levers rotating.
-* The black circle represents a circular collar, the max rotation of the switches.
+* The black circle represents a circular collar, the cap on the max rotation of the stick.
 
 The proper switch spacing is a balance to make the diagonals are just large enough to be hit reliably, and the cardinal zones are just small enough you can reliably double tap the directions for dashing.
 
