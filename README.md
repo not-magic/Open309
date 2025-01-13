@@ -36,6 +36,7 @@ There are two collar variations, one with ridges, to minimize supports, and a fl
 
 This was made using [OpenSCAD](https://openscad.org/), which is a free open source parametric modeller. Once you open the file you can modify variables in the customizer (Window | Customizer in the menu) or just modify the source directly.
 ![Switch Zones](./images/switch_zones.png)
+
 In this example image:
 
 * The green area represents when one switch is triggered for a cardinal direction.
