@@ -36,9 +36,12 @@ In this example image:
 * The white area is the neutral deadzone, where the switches have no interaction. On a levered switch this will be slightly twisted because the switch levers rotate.
 * The black circle represents a circular collar, the cap on the max rotation of the stick.
 
-The proper switch spacing is a balance to make the diagonals are just large enough to be hit reliably, and the cardinal zones are just small enough you can reliably double tap the directions for dashing.
+The proper switch spacing is a balance:
+* Diagonals need to be large enough to be hit reliably.
+* Cardinal zones need to be shallow enough you can reliably double tap the directions for dashing.
+* Cardinal zones need to be wide enough to reliably find them.
 
-You can make double taps more reliable by increasing the grommet tension as it will return into the safe neutral zone faster.
+You can make dash actions more reliable by increasing the grommet tension as it will return into the safe neutral zone faster.
 
 * _SWITCH_SPACING_AWAY_ - This is the distance of switches to the center. The larger the value, the larger the safe neutral zone becomes and the smaller the activation zones become.
 * _SWITCH_SPACING_SIDEWAYS_ - This moves the switches perpedicular to the center. A smaller value (it is negative) will increase the size of the switch deadzone, reduce the tactility of the switches, increse the resistance to tolerance errors, and reduce how much the safe neutral is twisted.
