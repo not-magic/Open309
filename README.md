@@ -20,7 +20,7 @@ Tolerances were optimized for printing on my Prusa Mk3s w/ a 0.6 mm nozzle, usin
 
 If the collar is printed I would recommend using a random seam position, and lightly sanding the collar. This will prevent a noticeable bump in collar shape. I print the collar upside down with supports, which creates some pretty bad surface quality that is entirely hidden by the mounting plate.
 
-There are two collar variations, one with ridges, to minimize support contacts that may be easier to print, and a flat version.
+There are two collar variations, one with ridges, to minimize support contacts that may be easier to remove supports, and a flat version. The jury is out if the ridges help much, it produces fewer but harder to remove supports.
 
 ## Tweaking the design.
 
@@ -49,7 +49,7 @@ You can make dash actions more reliable by increasing the grommet tension as it 
 * _STICK_THROW_DEGREES_ - This is the max rotation of the lever (e.g. max throw angle) which is used to generate the collar angles. This adjusts the size of the collar.
 * _SWITCH_GUARD_DISTANCE_ - This will adjust the size of the gate in the switch plate. This may never be hit, but due to the way korean levers work, applying enough pressure you can force the grommet to deform and push the actuator towards the lever anyway. This is protection against damaging the switches. If you find you are hitting this with space to go, lower this distance.
 * _SHAFT_DIAMETER_ - This is the diameter of the shaft, used to generate the collar range of motion.
-* _SQUIRCLENESS_  - This affects the shape of the gate. At 0 it is a perfect circle. Higher numbers warp it into a square.
+* _SQUIRCLENESS_  - This affects the shape of the collar. At 0 it is a perfect circle. Higher numbers warp it into a square.
 
 Using a larger sized actuator has the same basic effect of reducing the switch away spacing, except it may also reduce the throw angle if it hits the switch guard.
 
