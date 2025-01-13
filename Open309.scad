@@ -6,10 +6,13 @@ SWITCH_GUARD_DISTANCE = 14.5;
 
 PART = 0; // [0:Everything, 1:Collar, 2:Body, 3:Switch Plate]
 
-ROTATION_ANGLE=7.5;
+STICK_THROW_DEGREES=15;
 ACTUATOR_DIAMETER = 16;
 SHAFT_DIAMETER = 9;
 SQUIRCLENESS = 1.8;
+
+// if true, the collar has ridges in it to potentially improve printablility
+COLLAR_RIDGES = true;
 
 module test() {
 	children();
@@ -20,7 +23,7 @@ PART_COLLAR = 1;
 PART_BODY = 2;
 PART_SWITCH_PLATE = 3;
 
-$fn = 66;
+$fn = $preview ? 0 : 66;
 
 HEX_RADIUS = 3.35;
 BOLT_HOLE_RADIUS = 1.6;
@@ -83,18 +86,20 @@ module main(part)
 					
 					//translate([-(25)-6, 25-6, -6]) cube([12,6,7]);
 					//translate([-(25)-6, 25-6*3, -6]) cube([12,6,7]);
-					
-					accuracy = 0.1;
-					
-					tab_thickness = 4.5;
-					
-					inner_hole_transform() translate([0,0,-6] + [-2.8, -2.8 -tab_thickness - accuracy,0]) {
-						cube([7.5, tab_thickness, 7]);
-					}
-					
-					outer_hole_transform() translate([0,0,-6] + [-10, 2.8 + accuracy, 0]) 
+										
+					if (part == PART_SWITCH_PLATE)
 					{
-						cube([12.8, tab_thickness, 7]);
+						accuracy = 0.1;						
+						tab_thickness = 4.5;
+
+						inner_hole_transform() translate([0,0,-6] + [-2.8, -2.8 -tab_thickness - accuracy,0]) {
+							cube([7.5, tab_thickness, 11]);
+						}
+						
+						outer_hole_transform() translate([0,0,-6] + [-10, 2.8 + accuracy, 0]) 
+						{
+							cube([12.8, tab_thickness, 11]);
+						}
 					}
 				}
 				
@@ -143,8 +148,8 @@ module main(part)
 		//slots();
 		if (part == PART_SWITCH_PLATE)
 		{
-			translate([0,-12,-1]) linear_extrude(2) mirror([0,1]) text(str(SWITCH_SPACING_AWAY, "mm"), 5, halign="center");
-			translate([0,17,-1]) linear_extrude(2) mirror([0,1]) text(str(SWITCH_ROTATION, "°"), 5, halign="center");
+			translate([-SWITCH_SPACING_AWAY-1,-17,-1]) linear_extrude(2) mirror([0,1]) text(str(SWITCH_SPACING_AWAY, "mm"), 5);
+			translate([SWITCH_SPACING_AWAY,20,-1]) linear_extrude(2) mirror([0,1]) text(str(SWITCH_ROTATION, "°"), 5, halign="right");
 			
 			switch_guard();
 			
@@ -224,7 +229,7 @@ module shaft_travel()
 					rotation = increment*i;
 					slant = (1-abs((rotation % 90)-45)/45) * SQUIRCLENESS;
 					
-					rotate([0,ROTATION_ANGLE+slant,rotation]) cylinder(d=SHAFT_DIAMETER, h=BODY_HEIGHT*3);
+					rotate([0,STICK_THROW_DEGREES/2+slant,rotation]) cylinder(d=SHAFT_DIAMETER, h=BODY_HEIGHT*3);
 				}		
 			}
 			
@@ -305,7 +310,7 @@ if (PART == PART_COLLAR || PART == PART_EVERYTHING)
 	COLLAR_HEIGHT = 7;
 
 	
-	color("blue") difference()
+	color("lightblue") difference()
 	{
 		translate([0,0,BODY_HEIGHT])
 		{
@@ -344,25 +349,45 @@ if (PART == PART_COLLAR || PART == PART_EVERYTHING)
 				translate([0,0,GATE_HEIGHT-2.8]) body_bolt_holes(false, true);
 				
 				translate([0,0,-3]) cylinder(d=36, h=6);
+				
+				translate([28, -25, -1]) mirror([-1,0]) linear_extrude(2) text(str(SQUIRCLENESS), 5);
+				translate([28, 20, -1]) mirror([-1,0]) linear_extrude(2) text(str(STICK_THROW_DEGREES, "°"), 5);
 			}
 		}
 
-		difference()
+		if (COLLAR_RIDGES)
 		{
-			for (i = [0:3])
+			difference()
 			{
-				translate([0,0,BODY_HEIGHT+GATE_HEIGHT]) rotate_extrude() translate([21+i*6,0]) scale([1,0.5]) circle(2);
-			}
-			
-			for (i = [0:3])
-			{
-				rotate([0,0,90*i]) hull()
+				intersection()
 				{
-					translate([BODY_BOLT_SPACING,0,0]) cylinder(h=100, d=BODY_HOLE_DIAMETER+10, center=true);
+					union() hull()
+					{
+						for(i = [0:3])
+						{
+							rotate([0,0,90*i]) translate([BODY_SIZE/2-6, BODY_SIZE/2-6, 0]) cylinder(r=4, h=100);
+						}
+					}
+					
+					union()
+					{
+						for (i = [0:3])
+						{
+							translate([0,0,BODY_HEIGHT+GATE_HEIGHT]) rotate_extrude() translate([21+i*6,0]) scale([1,1.5]) circle(2.2, $fn=4);
+						}
+					}
 				}
-			}	
-		}
 
+				for (i = [0:3])
+				{
+					rotate([0,0,90*i]) //hull()
+					{
+						translate([BODY_BOLT_SPACING,0,0]) cylinder(h=100, d=BODY_HOLE_DIAMETER+10, center=true);
+					}
+				}
+			}
+		}
+		
 		shaft_travel();
 	}	
 }

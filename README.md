@@ -30,7 +30,7 @@ It is made using [OpenSCAD](https://openscad.org/), which is a free open source 
 * _SWITCH_SPACING_AWAY_ - This adjusts the main switch spacing away from the center of the stick. This is the main thing to tweak to adjust the size of the deadzone.
 * _SWITCH_SPACING_SIDEWAYS_ - This moves the switches left and right. This should almost never need to be changed unless you want to use a non lever switch or have a custom lever postion.
 * _SWITCH_ROTATION_ - This will rotate the switches towards (negative) or away from the center (positive). This may be necessary if the switches do not trigger when the lever is exactly parallel.
-* _ROTATION_ANGLE_ - This is the max rotation of the lever (e.g. max throw angle) which is used to generate the collar angles.
+* _STICK_THROW_DEGREES_ - This is the max rotation of the lever (e.g. max throw angle) which is used to generate the collar angles.
 * _SWITCH_GUARD_DISTANCE_ - This will adjust the size of the gate in the switch plate. This may never be hit, but due to the way korean levers work, applying enough pressure you can force the grommet to deform and push the actuator towards the lever anyway. This is protection against damaging the switches. If you find you are hitting this with space to go, lower this distance.
 * _SHAFT_DIAMETER_ - This is the diameter of the shaft, used to generate the collar range of motion
 * _SQUIRCLENESS_  - This affects the shape of the gate. At 0 it is a perfect circle. Higher numbers warp it into a square.
