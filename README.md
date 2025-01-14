@@ -22,6 +22,8 @@ Other 309 variants may also work, but don't have any of them so I am not sure. I
 
 To assemble this you will also need `8x 16mm M3 bolts with nuts`, to attach the switches to the switch plate. The height of the switch plate is designed for exactly 16mm bolts so anything else will either not reach the nuts or will intersect with the body.
 
+The switch collar is also just barely too long for the stock `25mm M4 bolts`. It works, barely, but it works better with `30mm M4 bolts`.
+
 ## Print settings
 
 Tolerances were optimized for printing on my Prusa Mk3s with a 0.6 mm nozzle, using Overture PLA+.
