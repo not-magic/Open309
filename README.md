@@ -14,8 +14,6 @@ The body is in 3 parts to minimize what needs to be printed while tweaking thing
 
 There are premade .STLs over in the [Releases](https://github.com/not-magic/Open309/releases)
 
-My preferred switch spacing for the D2RV-LG switches is 24.8 so it may be a place to start.
-
 ## Parts Required
 
 All parts were designed to fit the [Crown CWL-309-MJ-NEW-Helpme-KMS-ST30 Joystick](https://focusattack.com/crown-cwl-309-mj-new-helpme-kms-st30-joystick/)
@@ -57,7 +55,7 @@ You can make dash actions more reliable by increasing the grommet tension as it 
 * _SWITCH_SPACING_SIDEWAYS_ - This moves the switches perpedicular to the center. A smaller value (it is negative) will increase the size of the switch deadzone, reduce the tactility of the switches, increase the resistance to tolerance errors, and reduce how much the neutral zone is twisted.
 * _SWITCH_ROTATION_ - This will rotate the switches towards (negative) or away from the center (positive). This may be necessary if the switches do not trigger when the lever is exactly parallel. Adjusting this will also twist all of the activation zones.
 * _STICK_THROW_DEGREES_ - This is the max rotation of the lever (e.g. max throw angle) which is used to generate the collar angles. This adjusts the size of the collar.
-* _SWITCH_GUARD_DISTANCE_ - This will adjust the size of the gate in the switch plate. This may never be hit, but due to the way korean levers work, applying enough pressure you can force the grommet to deform and push the actuator towards the lever anyway. This is protection against damaging the switches. If you find you are hitting this with space to go, lower this distance.
+* _SWITCH_GUARD_DISTANCE_ - This will adjust the size of the gate in the switch plate. This may never be hit, but due to the way korean levers work, applying enough pressure you can force the grommet to deform and push the actuator towards the lever anyway. This is protection against damaging the switches. If you find you are hitting this with space to go, lower this distance. Hitting this guard during normal operation will apply a square gate like feel, and is also going to be noisier as you hit the guard with more velocity than the collar.
 * _SHAFT_DIAMETER_ - This is the diameter of the shaft, used to generate the collar range of motion.
 * _SQUIRCLENESS_  - This affects the shape of the collar. At 0 it is a perfect circle. Higher numbers warp it into a square.
 
