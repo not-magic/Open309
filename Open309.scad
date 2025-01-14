@@ -1,6 +1,6 @@
 
-SWITCH_SPACING_AWAY = 25; // .1
-SWITCH_SPACING_SIDEWAYS = -7; // .1
+SWITCH_SPACING_AWAY = 24.1; // .1
+SWITCH_SPACING_SIDEWAYS = 7; // .1
 SWITCH_ROTATION = -1.5; // .1
 SWITCH_GUARD_DISTANCE = 14.5; // .1
 
@@ -45,7 +45,7 @@ OUTER_HOLE_SPACING = [-29.2, SWITCH_SPACING_AWAY-SWITCH_HOLE_DIM[1], 0];
 
 
 SWITCH_HOLE_DIM = [-22.2, -10.3, 0];
-OUTER_HOLE_SPACING = [SWITCH_SPACING_SIDEWAYS, SWITCH_SPACING_AWAY, 0];
+OUTER_HOLE_SPACING = [-SWITCH_SPACING_SIDEWAYS, SWITCH_SPACING_AWAY, 0];
 
 BODY_BOLT_SPACING = 45/2;
 
@@ -147,8 +147,9 @@ module main(part)
 		//slots();
 		if (part == PART_SWITCH_PLATE)
 		{
-			translate([-SWITCH_SPACING_AWAY-1,-17,-1]) linear_extrude(2) mirror([0,1]) text(str(SWITCH_SPACING_AWAY, "mm"), 5);
-			translate([SWITCH_SPACING_AWAY,20,-1]) linear_extrude(2) mirror([0,1]) text(str(SWITCH_ROTATION, "°"), 5, halign="right");
+			translate([-SWITCH_SPACING_AWAY-2,-SWITCH_GUARD_DISTANCE+2,-1]) linear_extrude(2) mirror([0,1]) text(str("A:", SWITCH_SPACING_AWAY), 5);
+			translate([SWITCH_GUARD_DISTANCE+9,-SWITCH_SPACING_AWAY+11,-1]) linear_extrude(2) mirror([0,1]) text(str("S:", SWITCH_SPACING_SIDEWAYS), 5, halign="right");
+			translate([SWITCH_SPACING_AWAY+1, SWITCH_GUARD_DISTANCE+4,-1]) linear_extrude(2) mirror([0,1]) text(str("R:", SWITCH_ROTATION, "°"), 5, halign="right");
 			
 			switch_guard();
 			
