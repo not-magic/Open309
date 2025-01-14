@@ -6,13 +6,13 @@ This started out as a way to create a NEW Helpme body that supported Omron D2RV-
 
 The body is in 3 parts to minimize what needs to be printed while tweaking things, as well as make it print with minimal supports:
 
-* *Collar* - This works as a replacement for the stock NEW Helpme collar, you can mix and match with the original collar and body.
-* *Body* - the middle part (that holds the grommet).
-* *Switch Plate* - This holds the switches and controls the spacing.
+* *Collar* - This works as a replacement for the stock NEW Helpme collar (you can mix and match with the original collar).
+* *Body* - the middle part that holds the grommet.
+* *Switch Plate* - This holds the switches and controls their spacing.
 
 # Printing
 
-There are premade .STLs over in the [Releases](https://github.com/not-magic/Open309/releases)
+There are premade .STLs over in the [Releases](https://github.com/not-magic/Open309/releases) you can start with.
 
 ## Parts Required
 
@@ -28,7 +28,7 @@ The switch collar is also just barely too long for the stock `25mm M4 bolts`. It
 
 Tolerances were optimized for printing on my Prusa Mk3s with a 0.6 mm nozzle, using Overture PLA+.
 
-If the collar is printed I would recommend using a random seam position, and lightly sanding the collar. This will prevent a noticeable bump in collar shape. I print the collar upside down with supports, which creates some pretty bad surface quality that is entirely hidden by the mounting plate.
+If the collar is printed I would recommend using a random seam position, and lightly sanding the collar. This will prevent a noticeable bump in the collar shape. I print the collar upside down with supports, which creates some pretty bad surface quality that is entirely hidden by the mounting plate.
 
 There are two collar variations, one with ridges, to minimize supports, and a flat version. The jury is out if the ridges help much, it produces fewer but harder to remove supports.
 
@@ -47,11 +47,11 @@ In this example image:
 
 The proper switch spacing is a balance:
 
-* Diagonals need to be large enough to be hit reliably.
-* Cardinal zones need to be shallow enough you can reliably double tap the directions for dashing.
-* Cardinal zones need to be wide enough to reliably find them.
+* Diagonals need to be large enough to be accurate.
+* Cardinal zones need to be shallow enough you can double tap the directions for dashing reliably.
+* Cardinal zones need to be wide enough to find them accurately
 
-You can make dash actions more reliable by increasing the grommet tension as it will return into the neutral zone faster.
+You can also make dash actions a bit more reliable by increasing the grommet tension, as it will return into the neutral zone faster.
 
 * _SWITCH_SPACING_AWAY_ - This is the distance of switches to the center. The larger the value, the larger the neutral zone becomes and the smaller the activation zones become.
 * _SWITCH_SPACING_SIDEWAYS_ - This moves the switches perpedicular to the center. A larger value will increase the size of the switch deadzone, reduce the tactility of the switches, make the tactility more consistent at diagonals, increase the resistance to tolerance errors, and reduce how much the neutral zone is twisted.
