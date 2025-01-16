@@ -51,9 +51,20 @@ The printed body is also a tiny bit too long for the stock `25mm M4 bolts`. It w
 
 All pieces are assembled stacked and held together by the M4 body bolts.
 
+The only parts kept from the original lever are:
+
+* The one-piece stick
+* The grommit + dx bobbin
+* The actuator (16mm or 16.2mm) which you could 3d print if you wanted
+* The M6 E-clip
+* The mounting plate
+* Microswitches
+
+If you were planning on replacing the grommet and switches anyway it may be cheaper to just buy the remaining parts.
+
 ## Print settings
 
-I did all test printing on a Prusa Mk3s with a 0.6 mm nozzle, using Overture PLA+.
+I did all test printing on a Prusa Mk3s with a 0.6 mm nozzle.
 
 If the collar is printed I would recommend using a random seam position, and lightly sanding the collar. This will prevent a ridge in the collar shape. I print the collar upside down with supports, which creates some pretty bad surface quality that is entirely hidden by the mounting plate.
 
