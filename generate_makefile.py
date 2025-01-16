@@ -1,12 +1,17 @@
 SPACINGS = [
-	25.2,
-	25.1,
-	25.0,
 	24.9,
 	24.8,
 	24.7,
 	24.6,
 	24.5,
+	24.4,
+	24.3,
+]
+
+D2RV_SPACINGS = [
+	24.4,
+	24.3,
+	24.2,
 ]
 
 COLLAR_SHAPES = {
@@ -40,9 +45,14 @@ with open("Makefile", "w") as f:
 			for ridge in COLLAR_RIDGES.keys():
 				f.write(f"\n\tstls/309_collar_{throw}_{shape}_{ridge}.stl\\")
 
-	for spacing in SPACINGS:
+	for spacing in D2RV_SPACINGS:
 		f.write(f"\n\tstls/309_switch_plate_{spacing}_D2RV.stl\\")
-		f.write(f"\n\tstls/309_switch_plate_{spacing}.stl\\")
+
+	for spacing in SPACINGS:
+		f.write(f"\n\tstls/309_switch_plate_{spacing}_STD.stl\\")
+
+	for spacing in SPACINGS:
+		f.write(f"\n\tstls/309_switch_plate_{spacing}_VD.stl\\")
 
 	f.write("\n\n")
 
@@ -61,12 +71,17 @@ with open("Makefile", "w") as f:
 				f.write(f"\n\nstls/309_collar_{throw}_{shape}_{ridge}.stl: stls/.directory_marker Open309.scad")
 				f.write(f"\n\topenscad -D PART=1 -D SQUIRCLENESS={squircleness} -D STICK_THROW_DEGREES={throw} {ridge_value} -o $@ Open309.scad")
 
-	for spacing in SPACINGS:
+	for spacing in D2RV_SPACINGS:
 		f.write(f"\n\nstls/309_switch_plate_{spacing}_D2RV.stl: stls/.directory_marker Open309.scad")
-		f.write(f"\n\topenscad -D PART=3 -D SWITCH_SPACING_AWAY={spacing} -D SWITCH_ROTATION=-1.5 -o $@ Open309.scad")
+		f.write(f"\n\topenscad -D PART=3 -D SWITCH_SPACING_AWAY={spacing}  -D SWITCH_SPACING_SIDEWAYS=6.5 -D EXTRA_SWITCH_SPACING_SIDEWAYS_DOWN=1.0 -D SWITCH_ROTATION=-1.4 -o $@ Open309.scad")
 
-		f.write(f"\n\nstls/309_switch_plate_{spacing}.stl: stls/.directory_marker Open309.scad")
+	for spacing in SPACINGS:
+		f.write(f"\n\nstls/309_switch_plate_{spacing}_STD.stl: stls/.directory_marker Open309.scad")
 		f.write(f"\n\topenscad -D PART=3 -D SWITCH_SPACING_AWAY={spacing} -o $@ Open309.scad")
+
+	for spacing in SPACINGS:
+		f.write(f"\n\nstls/309_switch_plate_{spacing}_VD.stl: stls/.directory_marker Open309.scad")
+		f.write(f"\n\topenscad -D PART=3 -D SWITCH_SPACING_AWAY={spacing} -D SWITCH_SPACING_SIDEWAYS=6.5 -D EXTRA_SWITCH_SPACING_SIDEWAYS_DOWN=1.0 -o $@ Open309.scad")
 
 	f.write("\n\nstls/Open309_STLs.zip: stls/.directory_marker ${OUTPUTS}")
 	f.write("\n\tzip -FS -j $@ ${OUTPUTS}")

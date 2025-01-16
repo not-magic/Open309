@@ -1,10 +1,18 @@
 
-SWITCH_SPACING_AWAY = 24.1; // .1
-SWITCH_SPACING_SIDEWAYS = 7; // .1
-SWITCH_ROTATION = -1.5; // .1
+SWITCH_SPACING_AWAY = 24.3; // .1
+SWITCH_SPACING_SIDEWAYS = 7.0; // .1
+SWITCH_ROTATION = -1.4; // .1
 SWITCH_GUARD_DISTANCE = 14.5; // .1
 
-PART = 0; // [0:Everything, 1:Collar, 2:Body, 3:Switch Plate]
+EXTRA_SWITCH_SPACING_SIDEWAYS_UP = 0.0; // .1
+EXTRA_SWITCH_SPACING_SIDEWAYS_DOWN = 0.0; // .1
+EXTRA_SWITCH_SPACING_SIDEWAYS_LEFT_RIGHT = 0.0; // .1
+
+EXTRA_SWITCH_SPACING_AWAY_UP = 0.0; // .1
+EXTRA_SWITCH_SPACING_AWAY_DOWN = 0.0; // .1
+EXTRA_SWITCH_SPACING_AWAY_LEFT_RIGHT = 0.0; // .1
+
+PART = 0; // [0:Everything, 1:Collar, 2:Body, 3:Switch Plate, 4:2D Switch Plate]
 
 STICK_THROW_DEGREES=15; // .1
 SHAFT_DIAMETER = 9; // .1
@@ -21,11 +29,13 @@ PART_EVERYTHING = 0;
 PART_COLLAR = 1;
 PART_BODY = 2;
 PART_SWITCH_PLATE = 3;
+PART_SWITCH_PLATE2D = 4;
 
 $fn = $preview ? 0 : 66;
 
 HEX_RADIUS = 3.35;
 BOLT_HOLE_RADIUS = 1.6;
+
 BODY_HOLE_DIAMETER = 4.4;
 
 BODY_SIZE = 65;
@@ -45,24 +55,40 @@ OUTER_HOLE_SPACING = [-29.2, SWITCH_SPACING_AWAY-SWITCH_HOLE_DIM[1], 0];
 
 
 SWITCH_HOLE_DIM = [-22.2, -10.3, 0];
-OUTER_HOLE_SPACING = [-SWITCH_SPACING_SIDEWAYS, SWITCH_SPACING_AWAY, 0];
+OUTER_HOLE_SPACING = [
+	[-(SWITCH_SPACING_SIDEWAYS + EXTRA_SWITCH_SPACING_SIDEWAYS_UP), SWITCH_SPACING_AWAY + EXTRA_SWITCH_SPACING_AWAY_UP, 0],
+	[-(SWITCH_SPACING_SIDEWAYS + EXTRA_SWITCH_SPACING_SIDEWAYS_LEFT_RIGHT), SWITCH_SPACING_AWAY + EXTRA_SWITCH_SPACING_AWAY_LEFT_RIGHT, 0],
+	[-(SWITCH_SPACING_SIDEWAYS + EXTRA_SWITCH_SPACING_SIDEWAYS_DOWN), SWITCH_SPACING_AWAY + EXTRA_SWITCH_SPACING_AWAY_DOWN, 0],
+	[-(SWITCH_SPACING_SIDEWAYS + EXTRA_SWITCH_SPACING_SIDEWAYS_LEFT_RIGHT), SWITCH_SPACING_AWAY + EXTRA_SWITCH_SPACING_AWAY_LEFT_RIGHT, 0],
+];
 
 BODY_BOLT_SPACING = 45/2;
 
-module outer_hole_transform(outer_hole_spacing=OUTER_HOLE_SPACING, switch_rotation=SWITCH_ROTATION)
+module outer_hole_transform()
 {
 	for (i = [0:3])
 	{
 		rotate([0,0,90*i])
 		{
-			translate(outer_hole_spacing) rotate(switch_rotation) children();
+			translate(OUTER_HOLE_SPACING[i]) rotate(SWITCH_ROTATION) children();
 		}
 	}
 }
 
-module inner_hole_transform(outer_hole_spacing=OUTER_HOLE_SPACING, switch_rotation=SWITCH_ROTATION)
+module inner_hole_transform()
 {
-	outer_hole_transform(outer_hole_spacing, switch_rotation) translate(SWITCH_HOLE_DIM) children();
+	outer_hole_transform() translate(SWITCH_HOLE_DIM) children();
+}
+
+module body_2d()
+{
+	translate([-BODY_SIZE/2, -BODY_SIZE/2]) hull() {
+		body_r = 2;
+		translate([body_r, body_r]) circle(r=body_r);
+		translate([BODY_SIZE-body_r, body_r]) circle(r=body_r);
+		translate([body_r, BODY_SIZE-body_r]) circle(r=body_r);
+		translate([BODY_SIZE-body_r, BODY_SIZE-body_r]) circle(r=body_r);
+	}	
 }
 
 module main(part)
@@ -75,13 +101,7 @@ module main(part)
 			{
 				union()
 				{
-					translate([-BODY_SIZE/2, -BODY_SIZE/2, 0]) hull() {
-						body_r = 2;
-						translate([body_r, body_r, 0]) cylinder(r=body_r, h=BODY_HEIGHT);
-						translate([BODY_SIZE-body_r, body_r, 0]) cylinder(r=body_r, h=BODY_HEIGHT);
-						translate([body_r, BODY_SIZE-body_r, 0]) cylinder(r=body_r, h=BODY_HEIGHT);
-						translate([BODY_SIZE-body_r, BODY_SIZE-body_r, 0]) cylinder(r=body_r, h=BODY_HEIGHT);
-					}
+					linear_extrude(BODY_HEIGHT) body_2d();
 					
 					//translate([-(25)-6, 25-6, -6]) cube([12,6,7]);
 					//translate([-(25)-6, 25-6*3, -6]) cube([12,6,7]);
@@ -172,12 +192,17 @@ module main(part)
 	}*/
 }
 
+module switch_bolt_holes_2d(scale=1.0)
+{
+	outer_hole_transform() circle(r=BOLT_HOLE_RADIUS*scale);
+	inner_hole_transform() circle(r=BOLT_HOLE_RADIUS*scale);
+}
+
 module switch_bolt_holes(part)
 {
 	if (part == PART_SWITCH_PLATE)
 	{
-		outer_hole_transform() cylinder(h=17, r=BOLT_HOLE_RADIUS, center=true);
-		inner_hole_transform() cylinder(h=17, r=BOLT_HOLE_RADIUS, center=true);
+		translate([0,0,-10]) linear_extrude(17) switch_bolt_holes_2d();
 		
 		nut_height = (5.5+3);
 		
@@ -189,6 +214,20 @@ module switch_bolt_holes(part)
 		inner_hole_transform()
 		{
 			translate([0,0,7-3]) cylinder(h=3, r=HEX_RADIUS, center=true, $fn=6);
+		}
+	}
+}
+
+module switch_guard_2d()
+{
+	radius = 6;
+	guard_distance = SWITCH_SPACING_AWAY-SWITCH_GUARD_DISTANCE;
+	
+	hull()
+	{
+		for (i = [0:3])
+		{
+			rotate([0,0,i*90]) translate([guard_distance-radius, -guard_distance+radius, -0.01]) circle(radius);
 		}
 	}
 }
@@ -239,14 +278,28 @@ module shaft_travel()
 	
 }
 
+module body_bolt_holes_2d(scale=1.0)
+{
+	for (i = [0:3])
+	{
+		rotate(90*i)
+		{
+			translate([BODY_BOLT_SPACING, 0])
+				circle(d=BODY_HOLE_DIAMETER*scale);
+		}
+	}
+			
+}
+
 module body_bolt_holes(hex=true, chamfer=false)
 {
+	translate([0,0,-50]) linear_extrude(100) body_bolt_holes_2d();
+	
 	for (i = [0:3])
 	{
 		rotate([0,0,90*i])
 		{
 			translate([BODY_BOLT_SPACING, 0, 0]) {
-				cylinder(h=100, d=BODY_HOLE_DIAMETER, center=true);
 				
 				if (hex)
 				{
@@ -390,6 +443,29 @@ if (PART == PART_COLLAR || PART == PART_EVERYTHING)
 		
 		shaft_travel();
 	}	
+}
+
+if (PART == PART_SWITCH_PLATE2D)
+{
+	difference()
+	{
+		union()
+		{
+			body_2d();
+			
+			outer_hole_transform() circle(7);
+			inner_hole_transform() circle(7);
+		}
+
+		difference()
+		{
+			body_bolt_holes_2d(1.0);
+			outer_hole_transform() circle(7);
+		}
+
+		switch_bolt_holes_2d(0.5);
+		switch_guard_2d();
+	}
 }
 
 module slots() {
