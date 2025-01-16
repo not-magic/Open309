@@ -8,18 +8,19 @@ The body is in 3 parts to minimize what needs to be printed while tweaking thing
 
 * *Collar* - This works as a replacement for the stock NEW Helpme collar (you can mix and match with the original collar).
 * *Body* - the middle part that holds the grommet.
-* *Switch Plate* - This holds the switches and controls their spacing.
+* *Switch Plate* - This holds the switches and controls their spacing
 
 # Printing
 
 There are premade .STLs over in the [Releases](https://github.com/not-magic/Open309/releases) you can start with.
 
-There are three variants of switch spacings prebuilt:
+There are three variants of switch plates in the releases:
+
 * Standard - (24.7 seems to be what the stock spacing is)
 * Variable Deadzones - These adjust the switch spacings to have a larger down deadzone and the rest to have shorter deadzones, just for something to play around with.
 * D2RV - These are what I found worked for me for the D2RV-LG switches, and include variable deadzones. I have settled on the 24.3 spacing.
 
-The variable deadzone switches are meant to be oriented with the text to the top of the body, so the "down" switch is a the top.
+The variable deadzone switch plates are meant to be oriented with the text to the top of the body, so the "down" switch is a the top.
 
 ## Parts Required
 
@@ -30,6 +31,8 @@ Other 309 variants may also work, but don't have any of them so I am not sure. I
 To assemble this you will also need `8x 16mm M3 bolts with nuts`, to attach the switches to the switch plate. The height of the switch plate is designed for exactly 16mm bolts so anything else will either not reach the nuts or will intersect with the body.
 
 The printed body is also a tiny bit too long for the stock `25mm M4 bolts`. It works, barely, but it works better with `30mm M4 bolts`.
+
+All pieces are assembled and stacked togther held together by the M4 body bolts.
 
 ## Print settings
 
