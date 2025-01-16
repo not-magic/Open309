@@ -22,6 +22,23 @@ There are three variants of switch plates in the releases:
 
 The variable deadzone switch plates are meant to be oriented with the text to the top of the body, so the "down" switch is a the top.
 
+There are many variations of the collars with different throw angles and collar shapes:
+
+* circle
+* heavy_squircle
+* squircle
+* light_squircle
+* square
+
+And each of them in throw angles:
+
+* 14.5
+* 15.0
+* 15.5
+* 16.0
+
+It's difficult to measure the stock throw angle but I think it's about 15.
+
 ## Parts Required
 
 All parts were designed to fit the [Crown CWL-309-MJ-NEW-Helpme-KMS-ST30 Joystick](https://focusattack.com/crown-cwl-309-mj-new-helpme-kms-st30-joystick/)
@@ -32,7 +49,7 @@ To assemble this you will also need `8x 16mm M3 bolts with nuts`, to attach the 
 
 The printed body is also a tiny bit too long for the stock `25mm M4 bolts`. It works, barely, but it works better with `30mm M4 bolts`.
 
-All pieces are assembled and stacked togther held together by the M4 body bolts.
+All pieces are assembled stacked and held together by the M4 body bolts.
 
 ## Print settings
 
