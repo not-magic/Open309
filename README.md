@@ -7,7 +7,7 @@ This started out as a way to create a NEW Helpme body that supported Omron D2RV-
 The body is in 3 parts to minimize what needs to be printed while tweaking things, as well as make it print with minimal supports:
 
 
-## Collard
+## Collar
 ![Collar](./images/collar.png)
 
 Works as a replacement for the stock NEW Helpme collar. This part is optional, you can use the original collar, and is only if you wish to change the shape or throw angle. There are round, square and a few squircle shapes.
