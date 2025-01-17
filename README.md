@@ -100,7 +100,7 @@ The proper switch spacing is a balance:
 * Diagonals need to be large enough to be accurate.
 * Cardinal zones need to be shallow enough you can double tap the directions for dashing reliably.
 * Cardinal zones need to be wide enough to find them accurately
-* Deadzones add a kind of "stickyness" to inputs, where a down to right motion may produce a QCF output if the down is still active because it hasn't left the down deadzone.
+* Deadzones must be the right size. They add a kind of "stickyness" to inputs, where a down to right motion may produce a QCF output if the down is still active because it hasn't left the down deadzone.
 
 You can also make dash actions a bit more reliable by increasing the grommet tension, as it will return into the neutral zone faster.
 
