@@ -6,9 +6,18 @@ This started out as a way to create a NEW Helpme body that supported Omron D2RV-
 
 The body is in 3 parts to minimize what needs to be printed while tweaking things, as well as make it print with minimal supports:
 
-* *Collar* - This works as a replacement for the stock NEW Helpme collar (you can mix and match with the original collar).
-* *Body* - the middle part that holds the grommet.
-* *Switch Plate* - This holds the switches and controls their spacing
+
+## Collard - Controls the throw and shape of the throw
+![Collar](./images/collar.png)
+
+This works as a replacement for the stock NEW Helpme collar. This part optional, you can use the original collar. This is only if you wish to change the shape or throw.
+
+## Body - The middle part that holds the grommet
+![Body](./images/body.png)
+
+## Switch Plate
+![Collar](./images/switch_plate.png)
+This holds the switches and controls their spacing
 
 # Printing
 
@@ -60,7 +69,7 @@ The only parts kept from the original lever are:
 * The mounting plate
 * Microswitches
 
-If you were planning on replacing the grommet and switches anyway it may be cheaper to just buy the remaining parts.
+If you were planning on replacing the grommet and switches anyway it may be cheaper to just buy the remaining parts separately.
 
 ## Print settings
 
