@@ -28,18 +28,18 @@ There are premade .STLs over in the [Releases](https://github.com/not-magic/Open
 
 There are three variants of switch plates in the releases:
 
-* Standard - (24.7 seems to be what the stock spacing is)
+* Standard - 24.7 seems to be what the stock spacing is.
 * Variable Deadzones - These adjust the switch spacings to have a larger down deadzone and the rest to have shorter deadzones, just for something to play around with.
 * D2RV - These are what I found worked for me for the D2RV-LG switches, and include variable deadzones. I have settled on the 24.3 spacing.
 
-The variable deadzone switch plates are meant to be oriented with the text to the top of the body, so the "down" switch is a the top.
+The variable deadzone switch plates are meant to be oriented with the text to the front of the stick enclosure, e.g. the "down" switch is at the top
 
 There are many variations of the collars with different throw angles and collar shapes:
 
 * circle
-* heavy_squircle
-* squircle
-* light_squircle
+* light_squircle (a more circular shape)
+* squircle (a shape I found I liked)
+* heavy_squircle (a more squarish shape)
 * square
 
 And each of them in throw angles:
@@ -55,7 +55,7 @@ It's difficult to measure the stock throw angle but I think it's about 15.
 
 All parts were designed to fit the [Crown CWL-309-MJ-NEW-Helpme-KMS-ST30 Joystick](https://focusattack.com/crown-cwl-309-mj-new-helpme-kms-st30-joystick/)
 
-Other 309 variants may also work, but don't have any of them so I am not sure. It is likely they can all work with minimal modifications.
+Other 309 variants may also work, but I don't have any of them so I am not sure. It is likely they can all work with minimal modifications.
 
 To assemble this you will also need `8x 16mm M3 bolts with nuts`, to attach the switches to the switch plate. The height of the switch plate is designed for exactly 16mm bolts so anything else will either not reach the nuts or will intersect with the body.
 
@@ -66,7 +66,7 @@ All pieces are assembled stacked and held together by the M4 body bolts.
 The only parts kept from the original lever are:
 
 * The one-piece stick
-* The grommit + dx bobbin
+* The grommit + DX bobbin
 * The actuator (16mm or 16.2mm) which you could 3d print if you wanted
 * The M6 E-clip
 * The mounting plate
@@ -99,7 +99,7 @@ The proper switch spacing is a balance:
 
 * Diagonals need to be large enough to be accurate.
 * Cardinal zones need to be shallow enough you can double tap the directions for dashing reliably.
-* Cardinal zones need to be wide enough to find them accurately
+* Cardinal zones need to be wide enough to find them accurately.
 * Deadzones must be the right size. They add a kind of "stickyness" to inputs, where a down to right motion may produce a QCF output if the down is still active because it hasn't left the down deadzone.
 
 You can also make dash actions a bit more reliable by increasing the grommet tension, as it will return into the neutral zone faster.
